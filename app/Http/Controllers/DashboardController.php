@@ -10,4 +10,14 @@ class DashboardController extends Controller
     {
         return view('dashboard.index');
     }
+
+    public function users()
+    {
+        return view('users.index');
+    }
+
+    public function addUser()
+    {
+        return view('users.create');
+    }
 }

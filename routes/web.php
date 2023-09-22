@@ -21,3 +21,6 @@ Route::post('/auth/check', [LoginController::class, 'checkAuth']);
 Route::post('/auth/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/users', [DashboardController::class, 'users'])->middleware('auth');
+Route::get('/dashboard/user/create', [DashboardController::class, 'addUser'])->middleware('auth');
+Route::post('/dashboard/user/create', [DashboardController::class, 'insertUser'])->middleware('auth');
