@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,9 @@ Route::post('/auth/logout', [LoginController::class, 'logout']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 //User Routes
-Route::get('/dashboard/users', [DashboardController::class, 'users'])->middleware('auth');
-Route::get('/dashboard/user/create', [DashboardController::class, 'addUser'])->middleware('auth');
-Route::post('/dashboard/user/create', [DashboardController::class, 'insertUser'])->middleware('auth');
+Route::get('/dashboard/users', [UserController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/users/create', [UserController::class, 'create'])->middleware('auth');
+Route::post('/dashboard/users/create', [UserController::class, 'store'])->middleware('auth');
 
 //Kelas Routes
 Route::get('/dashboard/kelas', [KelasController::class, 'index'])->name('kelas.index')->middleware('auth');

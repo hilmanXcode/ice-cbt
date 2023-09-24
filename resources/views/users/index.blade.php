@@ -5,4 +5,13 @@
 @endsection
 
 @section('script')
+    <script>
+        @if (session()->has('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Yeay !',
+                text: "{{ session('success') }}"
+            })
+        @endif
+    </script>
 @endsection
