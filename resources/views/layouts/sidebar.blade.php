@@ -19,7 +19,7 @@
         </a>
         <ul class="space-y-2 font-medium">
             <li>
-                <a href="#" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-900 group">
+                <a href="/dashboard" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-900 group">
                     <img src="http://localhost:8000/img/home.svg"
                         class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
                         aria-hidden="true" />
@@ -48,6 +48,14 @@
                         class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
                         aria-hidden="true" />
                     <span class="ml-3">Mata Pelajaran</span>
+                </a>
+            </li>
+            <li>
+                <a href="/dashboard/kelas" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-900 group">
+                    <img src="http://localhost:8000/img/class.png"
+                        class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
+                        aria-hidden="true" />
+                    <span class="ml-3">Kelas</span>
                 </a>
             </li>
             <li>

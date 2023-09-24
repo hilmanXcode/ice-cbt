@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,16 @@ Route::post('/auth/check', [LoginController::class, 'checkAuth']);
 Route::post('/auth/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+//User Routes
 Route::get('/dashboard/users', [DashboardController::class, 'users'])->middleware('auth');
 Route::get('/dashboard/user/create', [DashboardController::class, 'addUser'])->middleware('auth');
 Route::post('/dashboard/user/create', [DashboardController::class, 'insertUser'])->middleware('auth');
+
+//Kelas Routes
+Route::get('/dashboard/kelas', [KelasController::class, 'index'])->name('kelas.index')->middleware('auth');
+Route::get('/dashboard/kelas/create', [KelasController::class, 'create'])->name('kelas.create')->middleware('auth');
+Route::get('/dashboard/kelas/{id}/edit', [KelasController::class, 'edit'])->name('kelas.edit')->middleware('auth');
+Route::post('/dashboard/kelas/{id}/edit', [KelasController::class, 'update'])->name('kelas.edit')->middleware('auth');
+Route::post('/dashboard/kelas/create', [KelasController::class, 'store'])->name('kelas.store')->middleware('auth');
+Route::delete('/dashboard/kelas/{id}', [KelasController::class, 'delete'])->name('kelas.delete')->middleware('auth');
