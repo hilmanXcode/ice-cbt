@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ice CBT | Login</title>
+    <link rel="icon" href="http://localhost:8000/img/ice-icon2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,29 +15,37 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-blue-600 font-poppins">
-    <div class="container mx-auto flex justify-center">
-        <div class="mt-32 w-96 h-auto min-h-fit rounded-xl shadow-lg bg-black p-8">
-            <h1 class="font-bold text-4xl text-center mt-4 text-white">Login</h1>
-            <form action="/auth/check" method="post" class="mt-7">
-                @csrf
-                <div class="mb-3">
-                    <label for="username"
-                        class="block mb-2 text-sm font-medium text-white dark:text-white">Username</label>
-                    <input type="username" id="username" name="username"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="hilmanxcode" required>
-                </div>
-                <div class="mb-6">
-                    <label for="password"
-                        class="block mb-2 text-sm font-medium text-white dark:text-white">Password</label>
-                    <input type="password" id="password" name="password"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="********" required>
-                </div>
-                <button type="submit"
-                    class="w-full focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Login</button>
-            </form>
+<body class="bg-[#ecf5fc]">
+    <div
+        class="font-poppins sm:max-w-4xl h-auto md:mx-14 lg:mx-auto shadow-2xl shadow-[#a3c1f3] my-5 mx-10 sm:mt-16 sm:mx-10 rounded-xl overflow-hidden">
+        <div class="grid sm:grid-cols-2">
+            <div class="container text-center bg-[#a3c1f3] h-full sm:pt-28">
+                <img class="mx-auto" src="http://localhost:8000/img/ice-cube.png" alt="Logo" width="300"
+                    height="250">
+                <h1 class="text-4xl font-bold">Ice CBT</h1>
+                <p class="my-4 sm:mt-2">Aplikasi Ujian Paling Cool</p>
+            </div>
+            <div class="container p-10 bg-white">
+                <form action="/auth/check" method="post">
+                    @csrf
+                    <h1 class="text-xl sm:mt-16 font-semibold text-center">Login</h1>
+                    <div class="w-full mt-4">
+                        <label class="block" for="username">Username</label>
+                        <input class="w-full mt-1 border-gray-200 p-3 focus:ring-[#a3c1f3] focus:border-[#a3c1f3]"
+                            type="text" name="username" id="username" required placeholder="Example : hilmanxcode">
+                    </div>
+                    <div class="w-full mt-4">
+                        <label class="block" for="password">Password</label>
+                        <input class="w-full mt-1 border-gray-200 focus:ring-[#a3c1f3] focus:border-[#a3c1f3] p-3"
+                            type="password" name="password" id="password" required placeholder="Enter your password">
+                        <a class="text-end block mt-2 sm:mt-4 text-sm" href="">Forgot Password ?</a>
+                    </div>
+                    <button type="submit"
+                        class="px-5 py-3 w-full mt-4 sm:mt-14 bg-[#a3c1f3] active:scale-95 transition duration-300 font-semibold">
+                        Login
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 
