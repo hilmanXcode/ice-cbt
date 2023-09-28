@@ -14,12 +14,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="overflow-x-hidden font-poppins">
+<body class="overflow-x-hidden font-poppins bg-[#ecf5fc]">
 
     @include('layouts.sidebar')
 
     <div class="p-4 sm:ml-64">
-        <div class="p-4 border-2 rounded-lg">
+        <div>
             @yield('container')
         </div>
     </div>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ice CBT | Login</title>
-    <link rel="icon" href="http://localhost:8000/img/ice-icon2.png">
+    <link rel="icon" href="{{ env('APP_URL') }}/img/ice-icon2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
