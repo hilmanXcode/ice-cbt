@@ -81,13 +81,27 @@
         </div>
     </div>
     <div class="grid grid-cols-3 mt-3">
-        <div class="h-48 col-span-2 bg-white rounded-xl">
+        <div class="h-auto col-span-2 bg-white rounded-xl pb-5">
             <div class="flex">
                 <div class="p-5">
                     <img src="{{ env('APP_URL') }}/img/mp.png" alt="Megaphone" width="25" height="25">
                 </div>
                 <div class="mt-5">
                     <h1 class="font-bold">Pengumuman</h1>
+                </div>
+            </div>
+            <div class="flex flex-wrap">
+                <div class="w-full px-5 border-l-2 mb-2">
+                    <div class="p-5 bg-[#ecf5fc] rounded-xl flex">
+                        <div class="my-auto">
+                            <img class="ml-5" src="{{ env('APP_URL') }}/img/letter-c.png" alt="Pengumuman" width="30" height="30">
+                            <h1 class="ml-5 mt-2 text-sm">Administrator</h1>
+                            <h1 class="ml-5 text-[8px] font-semibold">09 September 2023</h1>
+                        </div>
+                        <div class="ml-10">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur facilis repudiandae adipisci consectetur laboriosam maxime rem perspiciatis mollitia a cum culpa maiores, quibusdam, numquam pariatur ea. Illo numquam itaque aliquid quis expedita sequi iure? Nostrum rem at fugiat fugit quaerat natus minus voluptatum. Distinctio dolorum id nisi quo labore quis.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
