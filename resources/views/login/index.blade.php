@@ -17,7 +17,7 @@
 
 <body class="bg-[#ecf5fc]">
     <div
-        class="font-poppins sm:max-w-4xl h-auto md:mx-14 lg:mx-auto shadow-2xl shadow-[#a3c1f3] my-5 mx-10 sm:mt-16 sm:mx-10 rounded-xl overflow-hidden">
+        class="font-poppins sm:max-w-4xl w-5/6 h-auto md:mx-14 lg:mx-auto shadow-2xl shadow-[#a3c1f3] my-5 mx-10 sm:mt-16 sm:mx-10 rounded-xl overflow-hidden">
         <div class="grid sm:grid-cols-2">
             <div class="container text-center bg-[#a3c1f3] h-full sm:pt-28">
                 <img class="mx-auto" src="http://localhost:8000/img/ice-cube.png" alt="Logo" width="300"

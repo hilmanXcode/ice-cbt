@@ -80,8 +80,8 @@
             </div>
         </div>
     </div>
-    <div class="grid grid-cols-3 mt-3">
-        <div class="h-auto col-span-2 bg-white rounded-xl pb-5">
+    <div class="grid lg:grid-cols-3 grid-cols-1 mt-3 gap-2">
+        <div class="h-auto lg:col-span-2 bg-white rounded-xl pb-5">
             <div class="flex">
                 <div class="p-5">
                     <img src="{{ env('APP_URL') }}/img/mp.png" alt="Megaphone" width="25" height="25">
@@ -94,16 +94,25 @@
                 <div class="w-full px-5 border-l-2 mb-2">
                     <div class="p-5 bg-[#ecf5fc] rounded-xl flex">
                         <div class="my-auto">
-                            <img class="ml-5" src="{{ env('APP_URL') }}/img/letter-c.png" alt="Pengumuman" width="30" height="30">
+                            <img class="ml-5" src="{{ env('APP_URL') }}/img/letter-c.png" alt="Pengumuman" width="30"
+                                height="30">
                             <h1 class="ml-5 mt-2 text-sm">Administrator</h1>
                             <h1 class="ml-5 text-[8px] font-semibold">09 September 2023</h1>
                         </div>
-                        <div class="ml-10">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur facilis repudiandae adipisci consectetur laboriosam maxime rem perspiciatis mollitia a cum culpa maiores, quibusdam, numquam pariatur ea. Illo numquam itaque aliquid quis expedita sequi iure? Nostrum rem at fugiat fugit quaerat natus minus voluptatum. Distinctio dolorum id nisi quo labore quis.</p>
+                        <div class="my-auto mx-auto">
+                            <h1 class="sm:text-sm mb-1 lg:text-base">Judulna
+                                panjang
+                                pokonamah</h1>
+                            <a href=""
+                                class="px-2 py-2 block text-center rounded-xl text-white text-sm font-semibold bg-[#5b5b5b] hover:scale-95 transition active:scale-90">Read
+                                More</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="bg-white rounded-xl w-full">
+            <h1>Hello Dunia</h1>
         </div>
     </div>
 @endsection
