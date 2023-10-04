@@ -92,7 +92,7 @@
             </div>
             <div class="flex flex-wrap">
                 <div class="w-full px-5 border-l-2 mb-2">
-                    <div class="p-5 bg-[#ecf5fc] rounded-xl flex">
+                    <div class="p-5 bg-[#ecf5fc] rounded-xl flex gap-4">
                         <div class="my-auto">
                             <img class="ml-5" src="{{ env('APP_URL') }}/img/letter-c.png" alt="Pengumuman" width="30"
                                 height="30">
@@ -100,7 +100,7 @@
                             <h1 class="ml-5 text-[8px] font-semibold">09 September 2023</h1>
                         </div>
                         <div class="my-auto mx-auto">
-                            <h1 class="sm:text-sm mb-1 lg:text-base">Judulna
+                            <h1 class="sm:text-sm mb-1 lg:text-base text-center">Judulna
                                 panjang
                                 pokonamah</h1>
                             <a href=""
@@ -111,20 +111,41 @@
                 </div>
             </div>
         </div>
-        <div class="bg-white rounded-xl w-full">
-            <h1>Hello Dunia</h1>
+        <div class="bg-white rounded-xl w-full p-5">
+            <div class="flex gap-2">
+                <img src="{{ env('APP_URL') }}/img/clock.png" alt="" width="25" height="25">
+                <h1 class="font-bold">Log Aktifitas</h1>
+            </div>
+            <div class="flex items-center mt-3">
+                <img src="{{ env('APP_URL') }}/img/user.png" alt="" width="50" height="50">
+                <div class="my-auto ml-1">
+                    <h1 class="text-sm font-semibold ">Hilman</h1>
+                    <h2 class="text-sm">02/10/2023 15:39</h2>
+                </div>
+                <div class="my-auto ml-4">
+                    <span
+                        class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 text-center">Login</span>
+                </div>
+            </div>
+            <div class="flex items-center mt-3">
+                <img src="{{ env('APP_URL') }}/img/user.png" alt="" width="50" height="50">
+                <div class="my-auto ml-1">
+                    <h1 class="text-sm font-semibold ">Hilman</h1>
+                    <h2 class="text-sm">02/10/2023 17:39</h2>
+                </div>
+                <div class="my-auto ml-4">
+                    <span
+                        class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Logout</span>
+                </div>
+            </div>
         </div>
     </div>
-@endsection
+    <div id="notification" class="">
+        {{-- <div
+            class="fixed p-5 top-0 right-1 rounded-xl md:bottom-1 bg-[#5b5b5b] md:right-1 md:top-auto text-white w-1/5 transition animate-slidekan">
+            <h1 class="font-semibold">Info</h1>
+            <h1 class="font-bold text-sm">Selamat Kamu Berhasil Login</h1>
+        </div> --}}
 
-@section('script')
-    <script>
-        @if (session()->has('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Yeay !',
-                text: "{{ session('success') }}"
-            })
-        @endif
-    </script>
+    </div>
 @endsection
