@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="overflow-x-hidden font-poppins bg-[#ecf5fc]">
+<body class="overflow-x-hidden font-poppins">
 
     @include('layouts.sidebar')
 

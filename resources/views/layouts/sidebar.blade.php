@@ -10,58 +10,63 @@
 </button>
 
 <aside id="default-sidebar"
-    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 sm:border-r-2"
     aria-label="Sidebar">
-    <div class="h-full px-3 py-4 overflow-y-auto bg-white dark:bg-gray-800">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-white">
         <a href="/dashboard" class="flex items-center pl-2.5 mb-5">
             <img src="{{ env('APP_URL') }}/img/logo-smk.png" class="h-6 mr-3 sm:h-7" alt="Ice CBT Logo" />
             <span class="self-center text-[16px] font-semibold whitespace-nowrap">SMK PGRI Telagasari</span>
         </a>
         <ul class="space-y-2 font-medium">
             <li>
-                <a href="/dashboard" class="flex items-center p-2 rounded-lg hover:text-white hover:bg-[#a3c1f3] group">
-                    <img src="{{ env('APP_URL') }}/img/home.svg"
-                        class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
+                <a href="/dashboard"
+                    class="flex font-medium items-center p-2 rounded-md {{ $page === 'Home' ? 'bg-[#0f172a] text-white hover:bg-[#0f172a]/90' : 'text-slate-800 hover:bg-slate-50' }} group">
+                    <img src="{{ env('APP_URL') }}/img/home.svg" class="w-5 h-5 transition duration-75"
                         aria-hidden="true" />
                     <span class="ml-3">Home</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 rounded-lg hover:text-white hover:bg-[#a3c1f3] group">
-                    <img src="{{ env('APP_URL') }}/img/books.png"
-                        class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
+                <a href="#" class="flex items-center p-2 rounded-md text-slate-800 hover:bg-slate-50 group">
+                    <img src="{{ env('APP_URL') }}/img/books.png" class="w-5 h-5 text-slate-100 transition duration-75"
                         aria-hidden="true" />
                     <span class="ml-3">Bank Soal</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 rounded-lg hover:text-white hover:bg-[#a3c1f3] group">
-                    <img src="{{ env('APP_URL') }}/img/clock.svg"
-                        class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
+                <a href="#" class="flex items-center p-2 rounded-md text-slate-800 hover:bg-slate-50 group">
+                    <img src="{{ env('APP_URL') }}/img/clock.svg" class="w-5 h-5 text-slate-100 transition duration-75"
                         aria-hidden="true" />
                     <span class="ml-3">Jadwal Ujian</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 rounded-lg hover:text-white hover:bg-[#a3c1f3] group">
-                    <img src="{{ env('APP_URL') }}/img/books.png"
-                        class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
+                <a href="#" class="flex items-center p-2 rounded-md text-slate-800 hover:bg-slate-50 group">
+                    <img src="{{ env('APP_URL') }}/img/books.png" class="w-5 h-5 text-slate-100 transition duration-75"
                         aria-hidden="true" />
                     <span class="ml-3">Mata Pelajaran</span>
                 </a>
             </li>
             <li>
-                <a href="/dashboard/kelas" class="flex items-center hover:text-white p-2 rounded-lg hover:bg-[#a3c1f3] group">
-                    <img src="{{ env('APP_URL') }}/img/class.png"
-                        class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
+                <a href="/dashboard/kelas"
+                    class="flex items-center {{ $page === 'Kelas' ? 'bg-[#0f172a] text-white hover:bg-[#0f172a]/90' : 'text-slate-800 hover:bg-slate-50' }} p-2 rounded-md group">
+                    <img src="{{ env('APP_URL') }}/img/class.png" class="w-5 h-5 text-slate-100 transition duration-75"
                         aria-hidden="true" />
                     <span class="ml-3">Kelas</span>
                 </a>
             </li>
             <li>
-                <a href="/dashboard/users" class="flex items-center hover:text-white p-2 rounded-lg hover:bg-[#a3c1f3] group">
-                    <img src="{{ env('APP_URL') }}/img/user.png"
-                        class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
+                <a href="/dashboard/users"
+                    class="flex items-center {{ $page === 'Users' ? 'bg-[#0f172a] text-white hover:bg-[#0f172a]/90' : 'text-slate-800 hover:bg-slate-50' }} p-2 rounded-md group">
+                    <img src="{{ env('APP_URL') }}/img/users.png" class="w-5 h-5 text-slate-100 transition duration-75"
+                        aria-hidden="true" />
+                    <span class="ml-3">Siswa</span>
+                </a>
+            </li>
+            <li>
+                <a href="/dashboard/staff"
+                    class="flex items-center {{ $page === 'Staff' ? 'bg-[#0f172a] text-white hover:bg-[#0f172a]/90' : 'text-slate-800 hover:bg-slate-50' }} p-2 rounded-md group">
+                    <img src="{{ env('APP_URL') }}/img/user.png" class="w-5 h-5 text-slate-100 transition duration-75"
                         aria-hidden="true" />
                     <span class="ml-3">Users</span>
                 </a>
@@ -71,10 +76,9 @@
                     <form action="/auth/logout" method="post">
                         @csrf
                         <button type="submit"
-                            class="flex items-center w-full p-2 rounded-lg hover:text-white hover:bg-[#a3c1f3] group">
+                            class="flex items-center w-full p-2 rounded-md text-slate-800 hover:bg-slate-50 group">
                             <img src="{{ env('APP_URL') }}/img/logout.png"
-                                class="w-5 h-5 text-slate-100 transition duration-75 dark:text-gray-400 group-hover:text-slate-50 dark:group-hover:text-white"
-                                aria-hidden="true" />
+                                class="w-5 h-5 text-slate-100 transition duration-75" aria-hidden="true" />
                             <span class="ml-3">Logout</span>
                         </button>
                     </form>

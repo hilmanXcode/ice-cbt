@@ -11,18 +11,27 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('users.index');
+        return view('users.index', [
+            'data' => User::all()->where('level', 1),
+            'page' => 'Users'
+        ]);
     }
 
     public function create()
     {
         return view('users.create', [
-            'dataKelas' => Kelas::all()
+            'dataKelas' => Kelas::all(),
+            'page' => 'Users'
         ]);
     }
 
     public function store(Request $request)
     {
+        if ($request['level'] == 3) {
+            $request['kelas'] = 666;
+        }
+
+
         $request->validate([
             'nama_lengkap' => ['required'],
             'kelas' => ['required', 'integer'],

@@ -10,13 +10,16 @@ class KelasController extends Controller
     public function index()
     {
         return view('kelas.index', [
-            'data' => Kelas::all()
+            'data' => Kelas::all(),
+            'page' => 'Kelas'
         ]);
     }
 
     public function create()
     {
-        return view('kelas.create');
+        return view('kelas.create', [
+            'page' => 'Kelas'
+        ]);
     }
 
     public function store(Request $request)
@@ -33,7 +36,8 @@ class KelasController extends Controller
     public function edit($id)
     {
         return view('kelas.edit', [
-            'data' => Kelas::find($id)
+            'data' => Kelas::find($id),
+            'page' => 'Kelas'
         ]);
     }
 
