@@ -68,7 +68,7 @@
                     class="flex items-center {{ $page === 'Staff' ? 'bg-[#0f172a] text-white hover:bg-[#0f172a]/90' : 'text-slate-800 hover:bg-slate-50' }} p-2 rounded-md group">
                     <img src="{{ env('APP_URL') }}/img/user.png" class="w-5 h-5 text-slate-100 transition duration-75"
                         aria-hidden="true" />
-                    <span class="ml-3">Users</span>
+                    <span class="ml-3">Staff</span>
                 </a>
             </li>
             <ul class="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">

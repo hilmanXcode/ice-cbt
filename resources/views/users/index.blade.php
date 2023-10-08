@@ -74,12 +74,26 @@
 
 @section('script')
     <script>
-        @if (session()->has('success'))
+        $('.show-confirm').click(function(event) {
+
+            var form = $(this).closest("form");
+
+            event.preventDefault();
+
             Swal.fire({
-                icon: 'success',
-                title: 'Yeay !',
-                text: "{{ session('success') }}"
+                title: 'Kamu Yakin?',
+                text: "Kamu tidak akan bisa mengembalikan data ini!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, saya yakin!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit()
+                }
             })
-        @endif
+
+        });
     </script>
 @endsection

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->foreignId('kelas_id');
             $table->integer('level');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
             $table->timestamps();
         });

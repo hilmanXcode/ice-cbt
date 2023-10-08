@@ -28,7 +28,11 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::get('/dashboard/users', [UserController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/users/create', [UserController::class, 'create'])->middleware('auth');
 Route::post('/dashboard/users/create', [UserController::class, 'store'])->middleware('auth');
+Route::get('/dashboard/users/{id}/edit', [UserController::class, 'edit'])->middleware('auth');
+Route::post('/dashboard/users/{id}/edit', [UserController::class, 'update'])->middleware('auth');
 Route::delete('/dashboard/users/{id}', [UserController::class, 'delete'])->name('siswa.delete')->middleware('auth');
+//User->admin Routes
+Route::get('/dashboard/staff', [UserController::class, 'indexadmin'])->name('admin.index')->middleware('auth');
 
 //Kelas Routes
 Route::get('/dashboard/kelas', [KelasController::class, 'index'])->name('kelas.index')->middleware('auth');
