@@ -87,7 +87,8 @@ class UserController extends Controller
     public function indexadmin()
     {
         return view('staff.index', [
-            'page' => 'Staff'
+            'page' => 'Staff',
+            'dataUser' => User::all()->where('level', '>', 1)
         ]);
     }
 }

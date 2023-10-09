@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//Login Routes
 Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/auth/check', [LoginController::class, 'checkAuth']);
 Route::post('/auth/logout', [LoginController::class, 'logout']);
 
+//Dashboard Routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-
 //User Routes
 Route::get('/dashboard/users', [UserController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/users/create', [UserController::class, 'create'])->middleware('auth');
@@ -32,7 +32,8 @@ Route::get('/dashboard/users/{id}/edit', [UserController::class, 'edit'])->middl
 Route::post('/dashboard/users/{id}/edit', [UserController::class, 'update'])->middleware('auth');
 Route::delete('/dashboard/users/{id}', [UserController::class, 'delete'])->name('siswa.delete')->middleware('auth');
 //User->admin Routes
-Route::get('/dashboard/staff', [UserController::class, 'indexadmin'])->name('admin.index')->middleware('auth');
+Route::get('/dashboard/staff', [UserController::class, 'indexadmin'])->name('staff.index')->middleware('auth');
+Route::delete('/dashboard/staff/{id}', [UserController::class, 'delete'])->name('staff.delete')->middleware('auth');
 
 //Kelas Routes
 Route::get('/dashboard/kelas', [KelasController::class, 'index'])->name('kelas.index')->middleware('auth');

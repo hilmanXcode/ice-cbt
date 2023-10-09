@@ -20,9 +20,6 @@
                         <th scope="col" class="px-6 py-3">
                             Username
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Kelas
-                        </th>
                         <th scope="col" class="text-center px-6 py-3">
                             Action
                         </th>
@@ -30,30 +27,31 @@
                 </thead>
                 <tbody>
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <td class="px-6 py-4">
-                            #1
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Alexander
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            fackya1777
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            FackYaa
-                        </th>
-                        <td class="no-underline">
-                            <div class="container flex justify-center gap-2">
-                                <a href="/dashboard/users/1/edit"
-                                    class="font-semibold px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 active:bg-blue-800">Edit</a>
-                                <form action="" method="POST">
-                                    <button type="submit"
-                                        class="font-semibold px-6 py-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white rounded-lg show-confirm">Delete</button>
+                        @foreach ($dataUser as $staff)
+                            <td class="px-6 py-4">
+                                #{{ $loop->iteration }}
+                            </td>
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $staff->nama_lengkap }}
+                            </th>
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $staff->username }}
+                            </th>
+                            <td class="no-underline">
+                                <div class="container flex justify-center gap-2">
+                                    <a href="/dashboard/staff/{{ $staff->id }}/edit"
+                                        class="font-semibold px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 active:bg-blue-800">Edit</a>
+                                    <form action="{{ route('staff.delete', $staff->id) }}" method="POST">
+                                        <button type="submit"
+                                            class="font-semibold px-6 py-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white rounded-lg show-confirm">Delete</button>
 
-                                </form>
+                                    </form>
 
-                            </div>
-                        </td>
+                                </div>
+                            </td>
+                        @endforeach
                     </tr>
                 </tbody>
             </table>
