@@ -14,8 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="overflow-x-hidden font-poppins">
-
+<body class="overflow-x-hidden font-poppin">
     @include('layouts.sidebar')
 
     <div class="p-4 sm:ml-64">
@@ -23,6 +22,11 @@
             @yield('container')
         </div>
     </div>
+
+    <div id="tutup"
+        class="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 hidden">
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script>
