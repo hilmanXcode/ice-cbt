@@ -72,80 +72,9 @@
         </div>
     </div>
 
-    <div class="w-full max-w-lg border shadow-lg rounded-md bg-white fixed animate-in fade-in hidden translate-x-[-50%] top-[40%] left-[50%] duration-200"
-        id="modal">
-        <div class="p-5">
-            <h1 class="font-semibold text-xl">Hapus {{ $page }} ?</h1>
-            <h1 class="font-light mt-2">Apakah kamu yakin ingin menghapus {{ $page }} Ini ?</h1>
-            <div class="flex gap-2 justify-end mt-2 flex-wrap">
-                <button class="px-5 py-2 bg-black text-white rounded-md" id="yes-clicked">Yes</button>
-                <button class="px-5 py-2 border rounded-md" id="no-clicked">No</button>
-            </div>
-
-        </div>
-    </div>
+    <x-confirm _header='Hapus Siswa' _body='Apakah kamu yakin ingin menghapus siswa ini ?' />
 
     <div id="notification">
 
     </div>
-@endsection
-
-@section('script')
-    <script>
-        $('.xyz').click(function(event) {
-            event.preventDefault();
-            document.querySelector('#tutup').classList.toggle('hidden');
-            document.querySelector('#modal').classList.toggle('hidden');
-            document.querySelector('#modal').classList.add('z-50');
-        })
-
-        $('#no-clicked').click(function(event) {
-            let modal = document.querySelector('#modal');
-            modal.classList.replace('animate-in', 'animate-out');
-            modal.classList.replace('fade-in', 'fade-out');
-            setTimeout(function() {
-                modal.classList.toggle('hidden');
-                modal.classList.replace('animate-out', 'animate-in');
-                modal.classList.replace('fade-out', 'fade-in');
-                document.querySelector('#tutup').classList.toggle('hidden');
-            }, 200);
-        })
-
-        $('#yes-clicked').click(function(event) {
-            let form = $('.xyz').closest("form");
-            let modal = document.querySelector('#modal');
-            modal.classList.replace('animate-in', 'animate-out');
-            modal.classList.replace('fade-in', 'fade-out');
-            setTimeout(function() {
-                modal.classList.toggle('hidden');
-                modal.classList.replace('animate-out', 'animate-in');
-                modal.classList.replace('fade-out', 'fade-in');
-                document.querySelector('#tutup').classList.toggle('hidden');
-                form.submit();
-            }, 200);
-        })
-
-
-        $('.show-confirm').click(function(event) {
-
-            var form = $(this).closest("form");
-
-            event.preventDefault();
-
-            Swal.fire({
-                title: 'Kamu Yakin?',
-                text: "Kamu tidak akan bisa mengembalikan data ini!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, saya yakin!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    form.submit()
-                }
-            })
-
-        });
-    </script>
 @endsection

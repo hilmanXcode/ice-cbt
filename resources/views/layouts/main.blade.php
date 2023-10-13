@@ -23,13 +23,45 @@
         </div>
     </div>
 
-    <div id="tutup"
-        class="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 hidden">
+    <div id="tutup" class="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm hidden">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script>
+        $('.xyz').click(function(event) {
+            event.preventDefault();
+            document.querySelector('#tutup').classList.toggle('hidden');
+            document.querySelector('#modal').classList.toggle('hidden');
+            document.querySelector('#modal').classList.add('z-50');
+        })
+
+        $('#no-clicked').click(function(event) {
+            let modal = document.querySelector('#modal');
+            modal.classList.replace('animate-in', 'animate-out');
+            modal.classList.replace('slide-in-from-bottom', 'fade-out');
+            setTimeout(function() {
+                modal.classList.toggle('hidden');
+                modal.classList.replace('animate-out', 'animate-in');
+                modal.classList.replace('fade-out', 'slide-in-from-bottom');
+                document.querySelector('#tutup').classList.toggle('hidden');
+            }, 100);
+        })
+
+        $('#yes-clicked').click(function(event) {
+            let form = $('.xyz').closest("form");
+            let modal = document.querySelector('#modal');
+            modal.classList.replace('animate-in', 'animate-out');
+            modal.classList.replace('slide-in-from-bottom', 'fade-out');
+            setTimeout(function() {
+                modal.classList.toggle('hidden');
+                modal.classList.replace('animate-out', 'animate-in');
+                modal.classList.replace('fade-out', 'slide-in-from-bottom');
+                document.querySelector('#tutup').classList.toggle('hidden');
+                form.submit();
+            }, 100);
+        })
+
         const notifPlace = document.querySelector('#notification');
 
         const emptySetNotif = () => {
