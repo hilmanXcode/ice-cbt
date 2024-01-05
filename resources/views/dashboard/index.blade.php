@@ -65,7 +65,7 @@
                 </div>
                 <div class="ml-2">
                     <h1 class="font-semibold sm:text-sm">Data Siswa</h1>
-                    <h1 class="md:text-xl sm:text-base">100</h1>
+                    <h1 class="md:text-xl sm:text-base">{{ $dataSiswa->count() }}</h1>
                 </div>
             </div>
         </div>

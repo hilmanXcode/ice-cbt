@@ -15,7 +15,7 @@
     <div class="h-full px-3 py-4 overflow-y-auto bg-white">
         <a href="/dashboard" class="flex items-center pl-2.5 mb-5">
             <img src="{{ env('APP_URL') }}/img/logo-smk.png" class="h-6 mr-3 sm:h-7" alt="Ice CBT Logo" />
-            <span class="self-center text-[16px] font-semibold whitespace-nowrap">SMK PGRI Telagasari</span>
+            <span class="self-center text-[16px] font-semibold whitespace-nowrap">SMK PGRI TELAGASARI</span>
         </a>
         <ul class="space-y-2 font-medium">
             <li>

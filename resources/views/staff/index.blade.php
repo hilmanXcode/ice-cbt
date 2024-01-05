@@ -4,7 +4,7 @@
     <div class="p-10">
         <h1 class="text-2xl font-semibold text-center mb-3">Data Staff</h1>
         <div class="container text-end pb-2">
-            <a href="/dashboard/users/create"
+            <a href="/dashboard/staff/create"
                 class="font-semibold px-6 py-2 bg-[#0f172a] hover:bg-[#0f172a]/90 text-white rounded-lg">Tambah Staff</a>
         </div>
         <div class="mt-5 relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -26,8 +26,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($dataUser as $staff)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        @foreach ($dataUser as $staff)
                             <td class="px-6 py-4">
                                 #{{ $loop->iteration }}
                             </td>
@@ -44,32 +44,25 @@
                                     <a href="/dashboard/staff/{{ $staff->id }}/edit"
                                         class="font-semibold px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 active:bg-blue-800">Edit</a>
                                     <form action="{{ route('staff.delete', $staff->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
                                         <button type="submit"
-                                            class="font-semibold px-6 py-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white rounded-lg show-confirm">Delete</button>
+                                            class="font-semibold px-6 py-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white rounded-lg xyz">Delete</button>
 
                                     </form>
 
                                 </div>
                             </td>
+                        </tr>
                         @endforeach
-                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <x-confirm _header='Hapus Staff' _body='Apakah kamu yakin ingin menghapus staff ini ?' />
+
     <div id="notification">
 
     </div>
-@endsection
-
-@section('script')
-    <script>
-        @if (session()->has('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Yeay !',
-                text: "{{ session('success') }}"
-            })
-        @endif
-    </script>
 @endsection

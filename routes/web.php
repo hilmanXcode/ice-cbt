@@ -24,6 +24,7 @@ Route::post('/auth/logout', [LoginController::class, 'logout']);
 
 //Dashboard Routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
 //User Routes
 Route::get('/dashboard/users', [UserController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/users/create', [UserController::class, 'create'])->middleware('auth');
@@ -31,9 +32,14 @@ Route::post('/dashboard/users/create', [UserController::class, 'store'])->middle
 Route::get('/dashboard/users/{id}/edit', [UserController::class, 'edit'])->middleware('auth');
 Route::post('/dashboard/users/{id}/edit', [UserController::class, 'update'])->middleware('auth');
 Route::delete('/dashboard/users/{id}', [UserController::class, 'delete'])->name('siswa.delete')->middleware('auth');
+
 //User->admin Routes
 Route::get('/dashboard/staff', [UserController::class, 'indexadmin'])->name('staff.index')->middleware('auth');
-Route::delete('/dashboard/staff/{id}', [UserController::class, 'delete'])->name('staff.delete')->middleware('auth');
+Route::get('/dashboard/staff/create', [UserController::class, 'createadmin'])->name('staff.create')->middleware('auth');
+Route::post('/dashboard/staff/create', [UserController::class, 'storeadmin'])->name('staff.store')->middleware('auth');
+Route::get('/dashboard/staff/{id}/edit', [UserController::class, 'editadmin'])->name('staff.edit')->middleware('auth');
+Route::post('/dashboard/staff/{id}/edit', [UserController::class, 'updateadmin'])->name('update.admin')->middleware('auth');
+Route::delete('/dashboard/staff/{id}', [UserController::class, 'deleteadmin'])->name('staff.delete')->middleware('auth');
 
 //Kelas Routes
 Route::get('/dashboard/kelas', [KelasController::class, 'index'])->name('kelas.index')->middleware('auth');
